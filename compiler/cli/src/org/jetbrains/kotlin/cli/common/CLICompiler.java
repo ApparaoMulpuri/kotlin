@@ -204,6 +204,14 @@ public abstract class CLICompiler<A extends CommonCompilerArguments> extends CLI
             extraLanguageFeatures.put(LanguageFeature.Coroutines, coroutinesState);
         }
 
+        String newInferenceState = arguments.getNewInference();
+        if (newInferenceState != null) {
+            LanguageFeature.State featureState = newInferenceState.equals(CommonCompilerArguments.ENABLE) ?
+                                                 LanguageFeature.State.ENABLED :
+                                                 LanguageFeature.State.DISABLED;
+            extraLanguageFeatures.put(LanguageFeature.NewInference, featureState);
+        }
+
         CommonConfigurationKeysKt.setLanguageVersionSettings(configuration, new LanguageVersionSettingsImpl(
                 languageVersion,
                 ApiVersion.createByLanguageVersion(apiVersion),
