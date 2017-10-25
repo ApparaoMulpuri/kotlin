@@ -8,16 +8,16 @@ class Test {
 
     fun bar(a: Test, b: Test) {
         if (a.foo != null) {
-            useInt(<!TYPE_MISMATCH!>b.foo<!>)
+            useInt(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>b.foo<!><!><!>)
         }
         if (a.foo != null) {
-            useInt(<!TYPE_MISMATCH!>foo<!>)
+            useInt(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>foo<!><!><!>)
         }
         if (this.foo != null) {
-            useInt(<!DEBUG_INFO_SMARTCAST!>foo<!>)
+            useInt(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>foo<!><!>)
         }
         if (foo != null) {
-            useInt(<!DEBUG_INFO_SMARTCAST!>this.foo<!>)
+            useInt(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>this.foo<!><!>)
         }
     }
 

@@ -2,12 +2,12 @@
 // !WITH_NEW_INFERENCE
 
 class OldAndNew {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun modAssign(x: Int) {}
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun modAssign(x: Int) {}
     operator fun remAssign(x: Int) {}
 }
 
 class OnlyOld {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun modAssign(x: Int) {}
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun modAssign(x: Int) {}
 }
 
 class OnlyNew {
@@ -16,11 +16,11 @@ class OnlyNew {
 
 class Sample
 
-<!DEPRECATED_BINARY_MOD!>operator<!> fun Sample.modAssign(x: Int) {}
+<!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun Sample.modAssign(x: Int) {}
 operator fun Sample.remAssign(x: Int) {}
 
 class ModAndRemAssign {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun mod(x: Int): ModAndRemAssign = ModAndRemAssign()
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun mod(x: Int): ModAndRemAssign = ModAndRemAssign()
     operator fun remAssign(x: Int) {}
 }
 
@@ -29,7 +29,7 @@ fun test() {
     oldAndNew %= 1
 
     val onlyOld = OnlyOld()
-    onlyOld <!DEPRECATED_BINARY_MOD_AS_REM!>%=<!> 1
+    onlyOld <!NI;UNRESOLVED_REFERENCE!><!DEPRECATED_BINARY_MOD_AS_REM!>%=<!><!> 1
 
     val onlyNew = OnlyNew()
     onlyNew %= 1

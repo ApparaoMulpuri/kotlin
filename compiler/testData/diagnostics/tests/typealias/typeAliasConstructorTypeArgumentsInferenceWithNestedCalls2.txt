@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public val r1: Ref<in kotlin.Int>

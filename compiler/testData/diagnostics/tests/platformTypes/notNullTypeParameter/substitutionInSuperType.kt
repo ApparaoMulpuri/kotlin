@@ -31,13 +31,13 @@ class C1 : A<String?>() {
 }
 
 class C2 : A<String?>() {
-    <!NOTHING_TO_OVERRIDE!>override<!> fun bar(x: String?) {}
+    <!NI;NOTHING_TO_OVERRIDE!><!NOTHING_TO_OVERRIDE!>override<!><!> fun bar(x: String?) {}
 }
 
 fun test() {
-    B1().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
-    B2().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    B1().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
+    B2().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
 
-    C1().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    C1().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
 }
 

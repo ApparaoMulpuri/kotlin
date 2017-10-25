@@ -16,7 +16,7 @@ public class J {
 
 fun test() {
     foo(J.staticNN)
-    foo(<!TYPE_MISMATCH!>J.staticN<!>)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>J.staticN<!><!><!>)
     foo(J.staticJ)
 
     bar(J.staticNN)

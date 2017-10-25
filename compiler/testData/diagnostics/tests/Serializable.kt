@@ -1,10 +1,10 @@
 // !WITH_NEW_INFERENCE
 
-fun use(<!UNUSED_PARAMETER!>s<!>: java.io.Serializable) {
+fun use(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>s<!><!>: java.io.Serializable) {
 
 }
 
-fun useList(<!UNUSED_PARAMETER!>s<!>: List<java.io.Serializable>) {
+fun useList(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>s<!><!>: List<java.io.Serializable>) {
 
 }
 
@@ -38,8 +38,8 @@ fun testLiterals() {
 }
 
 fun testNotSerializable(l: List<Int>) {
-    use(<!TYPE_MISMATCH!>l<!>)
-    use(<!TYPE_MISMATCH!>N()<!>)
+    use(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>l<!><!><!>)
+    use(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>N()<!><!><!>)
 }
 
 enum class C {

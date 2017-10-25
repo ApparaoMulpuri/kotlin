@@ -8,5 +8,5 @@ fun bar(s: String): Int {
 
 fun foo(m: MyClass): Int {
     m.p = "xyz"
-    return bar(<!SMARTCAST_IMPOSSIBLE!>m.p<!>)
+    return bar(<!NI;SMARTCAST_IMPOSSIBLE!><!NI;SMARTCAST_IMPOSSIBLE!><!SMARTCAST_IMPOSSIBLE!>m.p<!><!><!>)
 }

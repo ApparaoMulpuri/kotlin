@@ -5,8 +5,8 @@
 package n
 
 fun main(args: Array<String>) {
-    val <!UNUSED_VARIABLE!>a<!> = <!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>array<!>(<!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>array<!>())
-    val <!UNUSED_VARIABLE!>a0<!> : Array<Array<Int>> = array(array())
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>a<!><!> = <!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>array<!>(<!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>array<!>())
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>a0<!><!> : Array<Array<Int>> = array(array())
     val a1 = array(array<Int>())
     checkSubtype<Array<Array<Int>>>(a1)
     val a2 = array<Array<Int>>(array())

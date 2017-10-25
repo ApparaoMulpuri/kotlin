@@ -8,18 +8,18 @@ abstract public class A implements java.util.Collection<String> {
 }
 
 // FILE: main.kt
-abstract class <!CONFLICTING_JVM_DECLARATIONS!>KA<!> : A() {
-    <!CONFLICTING_JVM_DECLARATIONS!>override fun contains(x: String)<!> = false
+abstract class <!NI;CONFLICTING_JVM_DECLARATIONS!><!CONFLICTING_JVM_DECLARATIONS!>KA<!><!> : A() {
+    <!NI;CONFLICTING_JVM_DECLARATIONS!><!CONFLICTING_JVM_DECLARATIONS!>override fun contains(x: String)<!><!> = false
 }
 
 fun foo(a: A, ka: KA) {
     a.contains("")
-    a.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
+    a.contains(<!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!>)
     "" in a
-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in a
+    <!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!> in a
 
     ka.contains("")
-    ka.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
+    ka.contains(<!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!>)
     "" in ka
-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in ka
+    <!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!> in ka
 }

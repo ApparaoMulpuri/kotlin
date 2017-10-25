@@ -2,12 +2,12 @@
 // !WITH_NEW_INFERENCE
 
 class OldAndNew {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun mod(x: Int) {}
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun mod(x: Int) {}
     operator fun rem(x: Int) {}
 }
 
 class OnlyOld {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun mod(x: Int) {}
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun mod(x: Int) {}
 }
 
 class OnlyNew {
@@ -16,17 +16,17 @@ class OnlyNew {
 
 class Sample
 
-<!DEPRECATED_BINARY_MOD!>operator<!> fun Sample.mod(x: Int) {}
+<!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun Sample.mod(x: Int) {}
 operator fun Sample.rem(x: Int) {}
 
 class IntAndUnit {
-    <!DEPRECATED_BINARY_MOD!>operator<!> fun mod(x: Int) = 0
+    <!NI;DEPRECATED_BINARY_MOD!><!DEPRECATED_BINARY_MOD!>operator<!><!> fun mod(x: Int) = 0
     operator fun rem(x: Int): Int = 0
 }
 
 fun test() {
     OldAndNew() % 1
-    OnlyOld() <!DEPRECATED_BINARY_MOD_AS_REM!>%<!> 1
+    <!NI;TYPE_MISMATCH!>OnlyOld()<!> <!DEPRECATED_BINARY_MOD_AS_REM!>%<!> 1
     OnlyNew() % 1
     Sample() % 1
 

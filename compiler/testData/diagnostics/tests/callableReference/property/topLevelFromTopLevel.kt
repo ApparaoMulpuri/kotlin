@@ -21,13 +21,13 @@ fun testX() {
 
 fun testY() {
     val yy = ::y
-    checkSubtype<KMutableProperty0<String>>(<!TYPE_MISMATCH!>yy<!>)
+    checkSubtype<KMutableProperty0<String>>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>yy<!><!><!>)
     checkSubtype<KProperty0<String>>(yy)
-    checkSubtype<KMutableProperty<String>>(<!TYPE_MISMATCH!>yy<!>)
+    checkSubtype<KMutableProperty<String>>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>yy<!><!><!>)
     checkSubtype<KProperty<String>>(yy)
     checkSubtype<KCallable<String>>(yy)
 
     checkSubtype<String>(yy.name)
     checkSubtype<String>(yy.get())
-    yy.<!UNRESOLVED_REFERENCE!>set<!>("yy")
+    yy.<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>set<!><!>("yy")
 }

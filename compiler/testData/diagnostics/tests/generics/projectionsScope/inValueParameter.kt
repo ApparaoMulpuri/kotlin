@@ -6,5 +6,5 @@ interface B<E> {
 }
 
 fun foo(x: B<in CharSequence>, y: A<CharSequence>) {
-    x.foo(<!TYPE_MISMATCH_DUE_TO_TYPE_PROJECTIONS!>y<!>)
+    x.foo(<!NI;TYPE_MISMATCH!><!TYPE_MISMATCH_DUE_TO_TYPE_PROJECTIONS!>y<!><!>)
 }

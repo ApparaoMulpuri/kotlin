@@ -9,7 +9,7 @@ fun nullableFun(): ((Int) -> Int)? = null
 fun test() {
     val x1: (Int) -> Int = bar(if (true) ::baz else ::baz)
     val x2: (Int) -> Int = bar(nullableFun() ?: ::baz)
-    val x3: (Int) -> Int = bar(::baz <!USELESS_ELVIS!>?: ::baz<!>)
+    val x3: (Int) -> Int = bar(::baz <!USELESS_ELVIS!><!NI;USELESS_ELVIS_ON_CALLABLE_REFERENCE!>?:<!> ::baz<!>)
 
     val i = 0
     val x4: (Int) -> Int = bar(when (i) {
@@ -18,7 +18,7 @@ fun test() {
                                    else -> ::baz
                                })
 
-    val x5: (Int) -> Int = bar(::baz<!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>)
+    val x5: (Int) -> Int = bar(::baz<!NI;NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!><!>)
 
     (if (true) ::baz else ::baz)(1)
 }

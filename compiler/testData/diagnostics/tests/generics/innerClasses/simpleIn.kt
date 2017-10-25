@@ -33,7 +33,7 @@ fun main() {
     outer.set(outer.Inner())
 
     val x: Outer<String>.Inner = factoryString()
-    outer.set(<!TYPE_MISMATCH!>x<!>)
+    outer.set(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
     val y: Outer<CharSequence>.Inner = infer<CharSequence>("")
     outer.set(y)
 

@@ -21,10 +21,10 @@ public class C<F> extends B<F> implements A<F> {
 // FILE: main.kt
 
 fun test() {
-    C.create().foo(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    C.create().foo(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
     C.create().foo("")
 
-    C<String>().foo(<!NULL_FOR_NONNULL_TYPE!>null<!>)
-    C<String?>().foo(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    C<String>().foo(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
+    C<String?>().foo(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
     C<String?>().foo("")
 }

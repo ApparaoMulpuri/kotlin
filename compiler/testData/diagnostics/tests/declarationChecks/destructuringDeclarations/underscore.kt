@@ -12,41 +12,41 @@ class C {
 
 fun test() {
     for ((x, _) in C()) {
-        foo(x, <!UNRESOLVED_REFERENCE!>_<!>)
+        foo(x, <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>)
     }
 
     for ((_, y) in C()) {
-        foo(<!UNRESOLVED_REFERENCE!>_<!>, y)
+        foo(<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>, y)
     }
 
     for ((_, _) in C()) {
-        foo(<!UNRESOLVED_REFERENCE!>_<!>, <!UNRESOLVED_REFERENCE!>_<!>)
+        foo(<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>, <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>)
     }
 
     for ((_ : Int, _ : String) in C()) {
-        foo(<!UNRESOLVED_REFERENCE!>_<!>, <!UNRESOLVED_REFERENCE!>_<!>)
+        foo(<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>, <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>)
     }
 
-    for ((_ : String, _ : Int) in <!COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH, COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!>C()<!>) {
-        foo(<!UNRESOLVED_REFERENCE!>_<!>, <!UNRESOLVED_REFERENCE!>_<!>)
+    for ((_ : String, _ : Int) in <!NI;COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!><!NI;COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!><!COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!><!COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!>C()<!><!><!><!>) {
+        foo(<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>, <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>)
     }
 
     val (x, _) = A()
     val (_, y) = A()
 
     foo(x, y)
-    foo(x, <!UNRESOLVED_REFERENCE!>_<!>)
-    foo(<!UNRESOLVED_REFERENCE!>_<!>, y)
+    foo(x, <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>)
+    foo(<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>_<!><!>, y)
 
-    val (<!REDECLARATION!>`_`<!>, z) = A()
+    val (<!NI;REDECLARATION!><!REDECLARATION!>`_`<!><!>, z) = A()
 
-    foo(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!>, z)
+    foo(<!NI;UNDERSCORE_USAGE_WITHOUT_BACKTICKS!><!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!><!>, z)
 
-    val (_, <!NAME_SHADOWING, REDECLARATION!>`_`<!>) = A()
+    val (_, <!NI;NAME_SHADOWING!><!NI;REDECLARATION!><!NAME_SHADOWING!><!REDECLARATION!>`_`<!><!><!><!>) = A()
 
-    foo(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS, TYPE_MISMATCH!>_<!>, y)
+    foo(<!NI;UNDERSCORE_USAGE_WITHOUT_BACKTICKS!><!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!><!TYPE_MISMATCH!>_<!><!><!><!><!>, y)
 
-    val (<!UNUSED_VARIABLE!>unused<!>, _) = A()
+    val (<!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>unused<!><!>, _) = A()
 }
 
-fun foo(<!UNUSED_PARAMETER!>x<!>: Int, <!UNUSED_PARAMETER!>y<!>: String) {}
+fun foo(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>x<!><!>: Int, <!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>y<!><!>: String) {}

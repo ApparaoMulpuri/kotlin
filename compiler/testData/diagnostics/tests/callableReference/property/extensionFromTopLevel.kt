@@ -14,9 +14,9 @@ fun test() {
     val f = String::countCharacters
     
     checkSubtype<KProperty1<String, Int>>(f)
-    checkSubtype<KMutableProperty1<String, Int>>(<!TYPE_MISMATCH!>f<!>)
+    checkSubtype<KMutableProperty1<String, Int>>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>f<!><!><!>)
     checkSubtype<Int>(f.get("abc"))
-    f.<!UNRESOLVED_REFERENCE!>set<!>("abc", 0)
+    f.<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>set<!><!>("abc", 0)
 
     val g = Int::meaning
 

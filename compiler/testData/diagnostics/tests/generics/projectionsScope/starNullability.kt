@@ -13,5 +13,5 @@ fun acceptA(a: A) {
 
 fun main(i: I<*>) {
     i.foo() checkType { _<A?>() }
-    acceptA(<!TYPE_MISMATCH!>i.foo()<!>) // i.foo() should be nullable but isn't
+    acceptA(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>i.foo()<!><!><!>) // i.foo() should be nullable but isn't
 }

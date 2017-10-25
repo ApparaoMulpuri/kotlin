@@ -5,5 +5,5 @@ fun <T> f1(l: <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>List2<!><!><T>)
 fun <T> f1(c: Collection<T>): T{throw Exception()}
 
 fun <T> test(l: List<T>) {
-    <!CANNOT_COMPLETE_RESOLVE!>f1<!>(l)
+    <!NI;OVERLOAD_RESOLUTION_AMBIGUITY!><!CANNOT_COMPLETE_RESOLVE!>f1<!><!>(l)
 }

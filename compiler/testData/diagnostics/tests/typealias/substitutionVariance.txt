@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public val inv1: Inv1<kotlin.Int> /* = Inv<kotlin.Int> */

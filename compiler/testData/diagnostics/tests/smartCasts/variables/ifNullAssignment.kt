@@ -5,7 +5,7 @@
 fun basic(): String {
     var current: String? = null
     current = if (current == null) "bar" else current
-    return <!DEBUG_INFO_SMARTCAST!>current<!>
+    return <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>current<!><!>
 }
 
 fun foo(flag: Boolean) {
@@ -15,7 +15,7 @@ fun foo(flag: Boolean) {
         x = if (flag) "34" else "12"
     }
 
-    <!DEBUG_INFO_SMARTCAST!>x<!>.hashCode()
+    <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>.hashCode()
 }
 
 fun bar(flag: Boolean) {
@@ -28,7 +28,7 @@ fun bar(flag: Boolean) {
         }
     }
 
-    <!DEBUG_INFO_SMARTCAST!>x<!>.hashCode()
+    <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>.hashCode()
 }
 
 fun baz(flag: Boolean) {
@@ -42,7 +42,7 @@ fun baz(flag: Boolean) {
         }
     }
 
-    <!DEBUG_INFO_SMARTCAST!>x<!>.hashCode()
+    <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>.hashCode()
 }
 
 fun gav(flag: Boolean, arg: String?) {
@@ -56,7 +56,7 @@ fun gav(flag: Boolean, arg: String?) {
         }
     }
 
-    <!DEBUG_INFO_SMARTCAST!>x<!>.hashCode()
+    <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>.hashCode()
 }
 
 fun gau(flag: Boolean, arg: String?) {
@@ -70,5 +70,5 @@ fun gau(flag: Boolean, arg: String?) {
         }
     }
 
-    x<!UNSAFE_CALL!>.<!>hashCode()
+    <!NI;DEBUG_INFO_SMARTCAST!>x<!><!UNSAFE_CALL!>.<!>hashCode()
 }

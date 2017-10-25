@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public val test1: Test<kotlin.Int, kotlin.String> /* = Hr<kotlin.Int, kotlin.String, Foo<kotlin.Int>, Bar<kotlin.String>> */

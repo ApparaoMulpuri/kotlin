@@ -9,5 +9,5 @@ fun Array<String>.length() : Int {
 }
 
 fun test(array : Array<String?>?) {
-    <!TYPE_MISMATCH!>array?.sure<Array<String?>>()<!>.length()
+    <!TYPE_MISMATCH!>array?.sure<Array<String?>>()<!>.<!NI;UNRESOLVED_REFERENCE_WRONG_RECEIVER!><!NI;DEBUG_INFO_UNRESOLVED_WITH_TARGET!>length<!><!>()
 }

@@ -5,13 +5,13 @@ fun bar(x: Int): Int = x + 1
 fun foo() {
     val x: Int? = null
     
-    bar(<!TYPE_MISMATCH!>x<!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
     if (x == null) return
     try {
-        bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
     }
     catch (e: Exception) {
-        bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
     }
-    bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 }

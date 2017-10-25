@@ -10,14 +10,14 @@ class Derived : Base() {
     fun foo() {
         val x: Int? = null
 
-        super.bar(<!TYPE_MISMATCH!>x<!>)
-        this.baz(<!TYPE_MISMATCH!>x<!>)
+        super.bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
+        this.baz(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
         if (x == null) return
-        super.bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
-        this.baz(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        super.bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
+        this.baz(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 
         val y: Int? = null
-        if (y != null) super.bar(this.baz(<!DEBUG_INFO_SMARTCAST!>y<!>))
-        else this.baz(super.bar(<!TYPE_MISMATCH, DEBUG_INFO_CONSTANT!>y<!>))
+        if (y != null) super.bar(this.baz(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>y<!><!>))
+        else this.baz(super.bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!NI;DEBUG_INFO_CONSTANT!><!TYPE_MISMATCH!><!DEBUG_INFO_CONSTANT!>y<!><!><!><!><!>))
     }
 }

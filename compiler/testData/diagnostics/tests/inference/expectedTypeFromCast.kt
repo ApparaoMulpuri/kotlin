@@ -17,5 +17,5 @@ val asStarList = foo() as List<*>
 
 val safeAs = foo() as? String
 
-val fromIs = <!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!>() is String
-val fromNoIs = <!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!>() !is String
+val fromIs = <!NI;USELESS_IS_CHECK!><!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!>() is String<!>
+val fromNoIs = <!NI;USELESS_IS_CHECK!><!TYPE_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!>() !is String<!>

@@ -17,20 +17,20 @@ object D {
 }
 
 object Z {
-    <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun set() {
+    <!NI;INAPPLICABLE_OPERATOR_MODIFIER!><!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!><!> fun set() {
     }
 }
 
 fun test() {
-    A[0] = <!TYPE_MISMATCH!>""<!>
+    A[0] = <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>
     A[0] = 2.72
 
-    B[0] = <!TYPE_MISMATCH!>""<!>
-    B[0] = <!CONSTANT_EXPECTED_TYPE_MISMATCH!>2.72<!>
+    B[0] = <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>
+    B[0] = <!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>2.72<!><!><!>
     B[0] = true
 
-    D[0] = <!TYPE_MISMATCH!>""<!>
+    D[0] = <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>
     D[0] = 2.72
 
-    Z[<!TOO_MANY_ARGUMENTS!>0<!>] = <!TOO_MANY_ARGUMENTS!>""<!>
+    Z[<!NI;TOO_MANY_ARGUMENTS!><!TOO_MANY_ARGUMENTS!>0<!><!>] = <!NI;TOO_MANY_ARGUMENTS!><!TOO_MANY_ARGUMENTS!>""<!><!>
 }

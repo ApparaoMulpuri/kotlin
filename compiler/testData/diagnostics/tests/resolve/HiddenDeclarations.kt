@@ -19,10 +19,10 @@ fun String.topLevelExtensionFun(){}
 val String.topLevelExtensionProperty: Int get() = 1
 
 open class A {
-    constructor(<!UNUSED_PARAMETER!>p<!>: Int) : this(<!TYPE_MISMATCH!>""<!>) {}
+    constructor(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>p<!><!>: Int) : this(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>) {}
 
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
-    constructor(<!UNUSED_PARAMETER!>s<!>: String){}
+    constructor(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>s<!><!>: String){}
 
     @Deprecated("hidden", level = DeprecationLevel.HIDDEN)
     open fun memberFun(){}
@@ -37,17 +37,17 @@ open class A {
     val String.memberExtensionProperty: Int get() = 1
 
     fun foo() {
-        <!UNRESOLVED_REFERENCE!>topLevelFun<!>()
-        <!UNRESOLVED_REFERENCE, VARIABLE_EXPECTED!>topLevelProperty<!><!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>++<!>
-        "".<!UNRESOLVED_REFERENCE!>topLevelExtensionFun<!>()
-        "".<!UNRESOLVED_REFERENCE!>topLevelExtensionProperty<!>
+        <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>topLevelFun<!><!>()
+        <!NI;UNRESOLVED_REFERENCE!><!NI;VARIABLE_EXPECTED!><!UNRESOLVED_REFERENCE!><!VARIABLE_EXPECTED!>topLevelProperty<!><!><!><!><!NI;DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!><!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>++<!><!>
+        "".<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>topLevelExtensionFun<!><!>()
+        "".<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>topLevelExtensionProperty<!><!>
 
-        <!UNRESOLVED_REFERENCE!>memberFun<!>()
-        <!UNRESOLVED_REFERENCE!>memberProperty<!>
-        "".<!UNRESOLVED_REFERENCE!>memberExtensionFun<!>()
-        "".<!UNRESOLVED_REFERENCE!>memberExtensionProperty<!>
+        <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>memberFun<!><!>()
+        <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>memberProperty<!><!>
+        "".<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>memberExtensionFun<!><!>()
+        "".<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>memberExtensionProperty<!><!>
 
-        A(<!TYPE_MISMATCH!>""<!>)
+        A(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>)
     }
 }
 
@@ -59,18 +59,18 @@ interface I {
     fun foo2()
 }
 
-<!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class X<!> : I {
+<!NI;ABSTRACT_MEMBER_NOT_IMPLEMENTED!><!ABSTRACT_MEMBER_NOT_IMPLEMENTED!>class X<!><!> : I {
     override fun foo1() {
     }
 }
 
-class B : A(<!TYPE_MISMATCH!>""<!>) {
+class B : A(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>) {
     // still can override it
     override fun memberFun() {
-        super.<!UNRESOLVED_REFERENCE!>memberFun<!>() // but cannot call super :)
+        super.<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>memberFun<!><!>() // but cannot call super :)
     }
 }
 
 class C : A {
-    constructor() : super(<!TYPE_MISMATCH!>""<!>)
+    constructor() : super(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>)
 }

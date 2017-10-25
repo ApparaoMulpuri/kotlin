@@ -21,23 +21,23 @@ fun all(a: String) {}
 
 // FILE: 2.kt
 
-import k.<!INVISIBLE_REFERENCE, DEBUG_INFO_MISSING_UNRESOLVED!>zero<!>
+import k.<!NI;INVISIBLE_REFERENCE!><!NI;DEBUG_INFO_MISSING_UNRESOLVED!><!INVISIBLE_REFERENCE!><!DEBUG_INFO_MISSING_UNRESOLVED!>zero<!><!><!><!>
 import k.one
 import k.two
 import k.all
 
 fun test() {
-    <!INVISIBLE_MEMBER!>zero<!>()
-    <!INVISIBLE_MEMBER!>zero<!>(1)
-    <!INVISIBLE_MEMBER!>zero<!>("")
+    <!NI;INVISIBLE_MEMBER!><!INVISIBLE_MEMBER!>zero<!><!>()
+    <!NI;INVISIBLE_MEMBER!><!INVISIBLE_MEMBER!>zero<!><!>(1)
+    <!NI;INVISIBLE_MEMBER!><!INVISIBLE_MEMBER!>zero<!><!>("")
 
     one()
-    one(<!TOO_MANY_ARGUMENTS!>1<!>)
-    one(<!TOO_MANY_ARGUMENTS!>""<!>)
+    one(<!NI;TOO_MANY_ARGUMENTS!><!TOO_MANY_ARGUMENTS!>1<!><!>)
+    one(<!NI;TOO_MANY_ARGUMENTS!><!TOO_MANY_ARGUMENTS!>""<!><!>)
 
     two()
     two(1)
-    two(<!TYPE_MISMATCH!>""<!>)
+    two(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>)
 
     all()
     all(1)

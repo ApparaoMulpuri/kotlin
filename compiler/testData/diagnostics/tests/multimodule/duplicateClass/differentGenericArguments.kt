@@ -26,5 +26,5 @@ public fun foo(a: A<Int>) {
 import p.*
 
 fun test() {
-    foo(<!TYPE_MISMATCH!>M1().a<!>)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>M1().a<!><!><!>)
 }

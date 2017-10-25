@@ -6,5 +6,5 @@ fun bar() {
 
 // See exception in KT-13421
 fun foo() {
-    42 and <!CONSTANT_EXPECTED_TYPE_MISMATCH!>false<!>
+    42 and <!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>false<!><!><!>
 }

@@ -5,28 +5,28 @@ fun bar(x: Int): Int = x + 1
 fun foo() {
     val x: Int? = null
 
-    bar(if (x == null) 0 else <!DEBUG_INFO_SMARTCAST!>x<!>)
+    bar(if (x == null) 0 else <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 
     if (x == null) {
-        bar(<!TYPE_MISMATCH, DEBUG_INFO_CONSTANT!>x<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!NI;DEBUG_INFO_CONSTANT!><!TYPE_MISMATCH!><!DEBUG_INFO_CONSTANT!>x<!><!><!><!><!>)
         return
     } else {
-        bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
     }
-    bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 
     val y: Int? = null
     if (y is Int) {
-        bar(<!DEBUG_INFO_SMARTCAST!>y<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>y<!><!>)
     } else {
-        bar(<!TYPE_MISMATCH!>y<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>y<!><!><!>)
         return
     }
-    bar(<!DEBUG_INFO_SMARTCAST!>y<!>)
+    bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>y<!><!>)
 
     val z: Int? = null
-    if (z != null) bar(<!DEBUG_INFO_SMARTCAST!>z<!>)
-    bar(<!TYPE_MISMATCH!>z<!>)
+    if (z != null) bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>z<!><!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>z<!><!><!>)
     bar(z!!)
-    if (<!SENSELESS_COMPARISON!>z != null<!>) bar(z<!UNNECESSARY_NOT_NULL_ASSERTION!>!!<!>)
+    if (<!NI;SENSELESS_COMPARISON!><!SENSELESS_COMPARISON!>z != null<!><!>) bar(z<!NI;UNNECESSARY_NOT_NULL_ASSERTION!><!UNNECESSARY_NOT_NULL_ASSERTION!>!!<!><!>)
 }

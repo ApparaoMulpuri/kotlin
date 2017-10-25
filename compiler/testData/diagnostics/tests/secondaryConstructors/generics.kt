@@ -18,5 +18,5 @@ class A1<R> : B<R> {
 }
 
 class A2<R> {
-    constructor(t: R, i: Int) : this(<!TYPE_MISMATCH!>i<!>, 1)
+    constructor(t: R, i: Int) : this(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>i<!><!><!>, 1)
 }

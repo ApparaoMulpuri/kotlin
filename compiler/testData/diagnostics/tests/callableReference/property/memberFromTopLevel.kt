@@ -12,10 +12,10 @@ fun test() {
     val p = A::foo
 
     checkSubtype<KProperty1<A, Int>>(p)
-    checkSubtype<KMutableProperty1<A, Int>>(<!TYPE_MISMATCH!>p<!>)
+    checkSubtype<KMutableProperty1<A, Int>>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>p<!><!><!>)
     checkSubtype<Int>(p.get(A()))
-    p.get(<!NO_VALUE_FOR_PARAMETER!>)<!>
-    p.<!UNRESOLVED_REFERENCE!>set<!>(A(), 239)
+    p.get(<!NI;NO_VALUE_FOR_PARAMETER!><!NO_VALUE_FOR_PARAMETER!>)<!><!>
+    p.<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>set<!><!>(A(), 239)
 
     val q = A::bar
 

@@ -8,4 +8,4 @@ object Z {
     infix fun add(b : Foo.() -> Unit) : Z = Z
 }
 
-val t2 = Z add <!TYPE_MISMATCH!>{ } <!TOO_MANY_ARGUMENTS!>{ }<!><!>
+val t2 = Z add <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>{ } <!NI;TOO_MANY_ARGUMENTS!><!TOO_MANY_ARGUMENTS!>{ }<!><!><!><!><!>

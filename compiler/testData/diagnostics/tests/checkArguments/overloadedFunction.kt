@@ -9,9 +9,9 @@ fun bar(a: Any) {}
 fun bar(a: Int) {}
 
 fun test() {
-    <!NONE_APPLICABLE!>foo<!>(1, 2)
-    foo(<!TYPE_MISMATCH!>""<!>)
+    <!NI;NONE_APPLICABLE!><!NONE_APPLICABLE!>foo<!><!>(1, 2)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>)
 
-    <!NONE_APPLICABLE!>bar<!>(1, 2)
-    <!NONE_APPLICABLE!>bar<!>()
+    <!NONE_APPLICABLE!>bar<!>(1, <!NI;TOO_MANY_ARGUMENTS!>2<!>)
+    <!NI;NONE_APPLICABLE!><!NONE_APPLICABLE!>bar<!><!>()
 }

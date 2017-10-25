@@ -21,11 +21,11 @@ fun test(b: B, c: C, d: D, e: E) {
     eatAString(b)
     eatAString(c)
     eatAString(d)
-    eatAString(<!TYPE_MISMATCH!>e<!>)
+    eatAString(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>e<!><!><!>)
 
     eatAStringN(b)
     eatAStringN(c)
-    eatAStringN(<!TYPE_MISMATCH!>d<!>)
+    eatAStringN(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>d<!><!><!>)
     eatAStringN(e)
 }
 
@@ -39,5 +39,5 @@ class W: B(), Z
 
 fun test2(w: W) {
     eatAString(w)
-    eatAStringN(<!TYPE_MISMATCH!>w<!>)
+    eatAStringN(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>w<!><!><!>)
 }

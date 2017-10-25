@@ -35,8 +35,8 @@ fun testLiterals() {
 }
 
 fun testNotSerializable(l: List<Int>) {
-    use(<!TYPE_MISMATCH!>l<!>)
-    use(<!TYPE_MISMATCH!>N()<!>)
+    use(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>l<!><!><!>)
+    use(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>N()<!><!><!>)
 }
 
 enum class C {

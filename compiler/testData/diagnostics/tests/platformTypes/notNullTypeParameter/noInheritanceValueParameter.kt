@@ -19,10 +19,10 @@ public class A<T> {
 // FILE: k.kt
 
 fun test() {
-    A.create().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    A.create().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
     A.create().bar("")
 
-    A<String>().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
-    A<String?>().bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    A<String>().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
+    A<String?>().bar(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
     A<String?>().bar("")
 }

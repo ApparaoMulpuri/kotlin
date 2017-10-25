@@ -18,8 +18,8 @@ class C2 {
 
         val prop: String = ""
 
-        fun o(<!UNUSED_PARAMETER!>s<!>: String) = Unit
-        fun o(<!UNUSED_PARAMETER!>i<!>: Int) = Unit
+        fun o(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>s<!><!>: String) = Unit
+        fun o(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>i<!><!>: Int) = Unit
 
         fun Int.ext() = Unit
         var String.ext: Int
@@ -27,11 +27,11 @@ class C2 {
             set(i) {
             }
 
-        fun A(<!UNUSED_PARAMETER!>c<!>: Int) = A()
+        fun A(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>c<!><!>: Int) = A()
 
         class A()
 
-        fun <T> genericFun(t: T, <!UNUSED_PARAMETER!>t2<!>: T): T = t
+        fun <T> genericFun(t: T, <!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>t2<!><!>: T): T = t
     }
 }
 
@@ -39,7 +39,7 @@ open class Base {
     fun f() {
     }
 
-    fun <T> g(<!UNUSED_PARAMETER!>t<!>: T) {
+    fun <T> g(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>t<!><!>: T) {
     }
 
     val p = 1
@@ -62,12 +62,12 @@ class C3 {
 // FILE: b.kt
 package b
 
-import a.C1.<!CANNOT_ALL_UNDER_IMPORT_FROM_SINGLETON!>O<!>.*
+import a.C1.<!NI;CANNOT_ALL_UNDER_IMPORT_FROM_SINGLETON!><!CANNOT_ALL_UNDER_IMPORT_FROM_SINGLETON!>O<!><!>.*
 
 fun testErroneusAllUnderImportFromObject() {
-    <!UNRESOLVED_REFERENCE!>A<!>()
-    <!UNRESOLVED_REFERENCE!>B<!>
-    <!UNRESOLVED_REFERENCE!>bar<!>()
+    <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>A<!><!>()
+    <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>B<!><!>
+    <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>bar<!><!>()
 }
 
 // FILE: c.kt
@@ -86,18 +86,18 @@ fun testImportFromObjectByName() {
     o(3)
     3.ext()
     "".ext = 3
-    val <!UNUSED_VARIABLE!>c<!>: Int = "".ext
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>c<!><!>: Int = "".ext
 
     3.extRenamed()
     "".extRenamed = 3
-    val <!UNUSED_VARIABLE!>c2<!>: Int = "".extRenamed
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>c2<!><!>: Int = "".extRenamed
 
     A()
     A(3)
 
-    val <!UNUSED_VARIABLE!>a<!>: Int = genericFun(3, 3)
-    val <!UNUSED_VARIABLE!>s<!>: String = genericFun("A", "b")
-    val <!UNUSED_VARIABLE!>b<!>: Boolean = genericFun(true, false)
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>a<!><!>: Int = genericFun(3, 3)
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>s<!><!>: String = genericFun("A", "b")
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>b<!><!>: Boolean = genericFun(true, false)
 }
 
 fun <T> t(t: T): T {
@@ -110,7 +110,7 @@ package d
 import a.C2.S.prop as renamed
 
 fun testFunImportedFromObjectHasNoDispatchReceiver(l: a.C2.S) {
-    l.<!UNRESOLVED_REFERENCE!>renamed<!>
+    l.<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>renamed<!><!>
     l.prop
     renamed
 }
@@ -134,7 +134,7 @@ fun testMembersFromSupertypes() {
     fromI()
 
     genericFromI(3)
-    genericFromI(<!TYPE_MISMATCH!>"a"<!>)
+    genericFromI(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>"a"<!><!><!>)
 
     own
 }

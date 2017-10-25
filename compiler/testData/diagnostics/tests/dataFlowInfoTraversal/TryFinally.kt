@@ -6,7 +6,7 @@ fun tryFinally(x: Int?) {
     } finally {
         x!!
     }
-    checkSubtype<Int>(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    checkSubtype<Int>(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 }
 
 fun tryCatchFinally(x: Int?) {
@@ -15,8 +15,8 @@ fun tryCatchFinally(x: Int?) {
     } catch (e: Exception) {
         x!!
     } finally {
-        checkSubtype<Int>(<!TYPE_MISMATCH!>x<!>)
+        checkSubtype<Int>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
         x!!
     }
-    checkSubtype<Int>(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    checkSubtype<Int>(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 }

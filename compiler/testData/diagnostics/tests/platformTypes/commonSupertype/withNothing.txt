@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public fun </*0*/ T> f(/*0*/ a: Out<T>, /*1*/ b: Out<T>, /*2*/ c: Out<T>): T
@@ -10,4 +8,17 @@ public interface Out</*0*/ out T1> {
     public open override /*1*/ /*fake_override*/ fun equals(/*0*/ other: kotlin.Any?): kotlin.Boolean
     public open override /*1*/ /*fake_override*/ fun hashCode(): kotlin.Int
     public open override /*1*/ /*fake_override*/ fun toString(): kotlin.String
+}
+
+package p {
+
+    public open class J {
+        public constructor J()
+        public open override /*1*/ /*fake_override*/ fun equals(/*0*/ other: kotlin.Any?): kotlin.Boolean
+        public open override /*1*/ /*fake_override*/ fun hashCode(): kotlin.Int
+        public open override /*1*/ /*fake_override*/ fun toString(): kotlin.String
+
+        // Static members
+        public open fun j(): p.J!
+    }
 }

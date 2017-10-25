@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public val test0: P<kotlin.Int, kotlin.Int> /* = Pair<kotlin.Int, kotlin.Int> */

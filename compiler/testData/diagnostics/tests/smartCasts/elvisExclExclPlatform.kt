@@ -21,7 +21,7 @@ fun bar(x: String) = x
 fun test(x: String?): Any {
     val y = My.create()
     val z = x ?: y!!
-    bar(<!TYPE_MISMATCH!>y<!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>y<!><!><!>)
     // !! / ?. is necessary here, because y!! above may not be executed
     y?.hashCode()
     y!!.hashCode()

@@ -16,9 +16,9 @@ fun foo(): Int {
             override fun run() = Unit
         }
         k.run()
-        val d: Int = <!DEBUG_INFO_SMARTCAST!>c<!>
+        val d: Int = <!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>c<!><!>
         // a is captured so smart cast is not possible
-        return d + <!SMARTCAST_IMPOSSIBLE!>a<!>
+        return d <!NI;NONE_APPLICABLE!>+<!> <!SMARTCAST_IMPOSSIBLE!>a<!>
     }
     else return -1
 }

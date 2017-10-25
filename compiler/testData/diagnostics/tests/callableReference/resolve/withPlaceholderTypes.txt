@@ -1,5 +1,3 @@
-// WITH_NEW_INFERENCE
-
 package
 
 public val x1: kotlin.String

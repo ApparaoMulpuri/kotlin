@@ -22,7 +22,7 @@ fun test(mc1: MyClass, mc2: MyClass2) {
     checkSubtype<Double>(c)
 
     //check no error types
-    checkSubtype<Boolean>(<!TYPE_MISMATCH!>a<!>)
-    checkSubtype<Boolean>(<!TYPE_MISMATCH!>b<!>)
-    checkSubtype<Boolean>(<!TYPE_MISMATCH!>c<!>)
+    checkSubtype<Boolean>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>a<!><!><!>)
+    checkSubtype<Boolean>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>b<!><!><!>)
+    checkSubtype<Boolean>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>c<!><!><!>)
 }

@@ -12,7 +12,7 @@ fun takeFirst(expr: StringBuilder): Char {
 
 fun evaluateArg(expr: CharSequence, numbers: ArrayList<Int>): Int {
   if (expr.length == 0) throw Exception("Syntax error: Character expected");
-  val c = takeFirst(<!TYPE_MISMATCH!>expr<!>)
+  val c = takeFirst(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>expr<!><!><!>)
   if (c >= '0' && c <= '9') {
     val n = c - '0'
     if (!numbers.contains(n)) throw Exception("You used incorrect number: " + n)
@@ -33,7 +33,7 @@ fun evaluateAdd(expr: StringBuilder, numbers: ArrayList<Int>): Int {
 fun evaluate(expr: StringBuilder, numbers: ArrayList<Int>): Int {
   val lhs = evaluateAdd(expr, numbers)
   if (expr.length > 0) {
-    val <!UNUSED_VARIABLE!>c<!> = expr.get(0)
+    val <!NI;UNUSED_VARIABLE!><!UNUSED_VARIABLE!>c<!><!> = expr.get(0)
     expr.deleteCharAt(0)
   }
   return lhs

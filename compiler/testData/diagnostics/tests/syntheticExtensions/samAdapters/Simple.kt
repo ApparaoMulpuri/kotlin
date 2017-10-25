@@ -14,13 +14,13 @@ fun foo(javaClass: JavaClass, kotlinClass: KotlinClass) {
         bar()
     }
 
-    kotlinClass.doSomething <!TYPE_MISMATCH!>{
+    kotlinClass.doSomething <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>{
         bar()
-    }<!>
+    }<!><!><!>
 
-    javaClass.doSomething2 <!TYPE_MISMATCH!>{
+    javaClass.doSomething2 <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>{
         bar()
-    }<!>
+    }<!><!><!>
 }
 
 fun bar(){}

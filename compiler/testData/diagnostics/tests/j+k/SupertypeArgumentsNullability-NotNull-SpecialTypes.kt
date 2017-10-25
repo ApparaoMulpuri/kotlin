@@ -20,5 +20,5 @@ public class Y extends X<String> {
 
 fun main() {
     checkSubtype<Any>(Y().fooN())
-    Y().barN(<!NULL_FOR_NONNULL_TYPE!>null<!>);
+    Y().barN(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>);
 }

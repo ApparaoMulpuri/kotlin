@@ -22,13 +22,13 @@ fun bar(aList: List<A>) {
         b checkType { _<String>() }
     }
 
-    aList.foo { (<!COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!>a: String<!>, b) ->
+    aList.foo { (<!NI;COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!><!COMPONENT_FUNCTION_RETURN_TYPE_MISMATCH!>a: String<!><!>, b) ->
         a checkType { _<Int>() }
         b checkType { _<String>() }
     }
 
-    aList.<!TYPE_INFERENCE_CONFLICTING_SUBSTITUTIONS!>foo<!> { (a, b): B ->
-        b checkType { <!TYPE_MISMATCH!>_<!><Int>() }
-        a checkType { <!TYPE_MISMATCH!>_<!><String>() }
-    }
+    aList.<!TYPE_INFERENCE_CONFLICTING_SUBSTITUTIONS!>foo<!> <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!>{ (a, b): B ->
+        b checkType { <!NI;UNRESOLVED_REFERENCE_WRONG_RECEIVER!><!NI;DEBUG_INFO_UNRESOLVED_WITH_TARGET!><!TYPE_MISMATCH!>_<!><!><!><Int>() }
+        a checkType { <!NI;UNRESOLVED_REFERENCE_WRONG_RECEIVER!><!NI;DEBUG_INFO_UNRESOLVED_WITH_TARGET!><!TYPE_MISMATCH!>_<!><!><!><String>() }
+    }<!><!>
 }

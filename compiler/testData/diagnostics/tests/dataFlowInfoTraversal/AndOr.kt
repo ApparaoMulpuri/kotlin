@@ -6,9 +6,9 @@ fun foo() {
     val x: Int? = null
 
     if (x != null && bar(x) == 0) bar(bar(x))
-    bar(<!TYPE_MISMATCH!>x<!>)
-    if (x == null || bar(x) == 0) bar(bar(<!TYPE_MISMATCH!>x<!>))
-    bar(<!TYPE_MISMATCH!>x<!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
+    if (x == null || bar(x) == 0) bar(bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>))
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
     if (x is Int && bar(x)*bar(x) == bar(x)) bar(x)
-    bar(<!TYPE_MISMATCH!>x<!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
 }

@@ -25,17 +25,17 @@ fun foo(k: KotlinClass) {
 
     k.setSomething4("")
     k.something4 += ""
-    k.setSomething4(<!NULL_FOR_NONNULL_TYPE!>null<!>)
-    k.something4 = <!NULL_FOR_NONNULL_TYPE!>null<!>
+    k.setSomething4(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
+    k.something4 = <!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!>
 
     useString(k.getSomething5())
     useString(k.something5)
     k.setSomething5(1)
-    k.something5 = <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>
+    k.something5 = <!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!>
 }
 
-fun useInt(<!UNUSED_PARAMETER!>i<!>: Int) {}
-fun useString(<!UNUSED_PARAMETER!>i<!>: String) {}
+fun useInt(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>i<!><!>: Int) {}
+fun useString(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>i<!><!>: String) {}
 
 // FILE: JavaClass.java
 public class JavaClass {

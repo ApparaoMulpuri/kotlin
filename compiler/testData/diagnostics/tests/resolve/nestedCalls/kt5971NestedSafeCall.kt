@@ -6,5 +6,5 @@
 fun foo(i: Int) {}
 
 fun test(s: String?) {
-    foo(<!TYPE_MISMATCH!>s?.length<!>)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>s?.length<!><!><!>)
 }

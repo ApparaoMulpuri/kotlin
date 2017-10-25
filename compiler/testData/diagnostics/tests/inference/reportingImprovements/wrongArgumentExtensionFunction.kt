@@ -5,5 +5,5 @@ class A
 fun A.fn(b: Int): Nothing = TODO()
 
 fun A.run() {
-    "".apply { fn(<!TYPE_MISMATCH!>""<!>) }
+    "".apply { fn(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>) }
 }

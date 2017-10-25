@@ -2,7 +2,7 @@
 
 package test
 
-@BadAnnotation(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
+@BadAnnotation(<!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!>)
 object SomeObject
 
 val some = SomeObject

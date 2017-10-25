@@ -103,5 +103,5 @@ fun main() {
     x[0]
     x.size
     x.remove("")
-    x.remove(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
+    x.remove(<!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!>)
 }

@@ -2,7 +2,7 @@
 
 class Array<E>(e: E) {
     val k = Array(1) {
-        1 <!USELESS_CAST!>as Any<!>
-        e as Any?
+        1 <!NI;USELESS_CAST!><!USELESS_CAST!>as Any<!><!>
+        e <!NI;USELESS_CAST!>as Any?<!>
     }
 }

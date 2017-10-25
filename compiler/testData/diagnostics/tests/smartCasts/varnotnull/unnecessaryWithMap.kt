@@ -14,8 +14,8 @@ class MyClass {
         var res = 0
         m = create()
         // See KT-7428
-        for ((k, v) in <!SMARTCAST_IMPOSSIBLE!>m<!>)
-            res += (k.length + v.length)
+        for ((k, v) in <!NI;SMARTCAST_IMPOSSIBLE!><!SMARTCAST_IMPOSSIBLE!>m<!><!>)
+            res <!NI;NONE_APPLICABLE!>+=<!> (k.<!NI;UNRESOLVED_REFERENCE!>length<!> <!NI;DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>+<!> v.<!NI;UNRESOLVED_REFERENCE!>length<!>)
         return res
     }
 }

@@ -2,11 +2,11 @@
 
 package p
 
-class X<V>(<!UNUSED_PARAMETER!>provider<!>: () -> V, <!UNUSED_PARAMETER!>trackValue<!>: Boolean) {
+class X<V>(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>provider<!><!>: () -> V, <!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>trackValue<!><!>: Boolean) {
 }
 
 class B {
-    val c = <!NO_VALUE_FOR_PARAMETER!>X<!><String> <!TYPE_MISMATCH!>{
+    val c = <!NI;NO_VALUE_FOR_PARAMETER!><!NO_VALUE_FOR_PARAMETER!>X<!><!><String> <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>{
         "e"
-    }<!>
+    }<!><!><!>
 }

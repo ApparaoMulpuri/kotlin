@@ -15,7 +15,7 @@ fun foo() {
         return@l1 103
     }
 
-    bar @Ann(<!TYPE_MISMATCH!>""<!>) {
+    bar @Ann(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>) {
         104
     }
 }

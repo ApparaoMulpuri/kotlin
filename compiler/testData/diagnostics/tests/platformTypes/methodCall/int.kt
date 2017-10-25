@@ -14,5 +14,5 @@ import p.*
 
 fun test() {
     J()._int(1)
-    J()._int(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+    J()._int(<!NI;NULL_FOR_NONNULL_TYPE!><!NI;NULL_FOR_NONNULL_TYPE!><!NULL_FOR_NONNULL_TYPE!>null<!><!><!>)
 }

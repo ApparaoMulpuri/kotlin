@@ -1,11 +1,11 @@
 // !CHECK_TYPE
 // !WITH_NEW_INFERENCE
 
-fun <T: Any> foo(vararg <!UNUSED_PARAMETER!>ts<!>: T): T? = null
+fun <T: Any> foo(vararg <!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>ts<!><!>: T): T? = null
 
-class Pair<A>(<!UNUSED_PARAMETER!>a<!>: A)
+class Pair<A>(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>a<!><!>: A)
 
 fun test() {
     val v = foo(Pair(1))
-    checkSubtype<Int>(<!TYPE_MISMATCH!>v<!>) // check that it is not error type
+    checkSubtype<Int>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>v<!><!><!>) // check that it is not error type
 }

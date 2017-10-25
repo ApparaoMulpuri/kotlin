@@ -8,7 +8,7 @@ public fun box() {
     var i : MyClass?
     i = MyClass()
     // Type of j should be inferred as MyClass?
-    var j = ++<!DEBUG_INFO_SMARTCAST!>i<!>
+    var j = ++<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>i<!><!>
     // j is null so call is unsafe
     j.hashCode()
 }

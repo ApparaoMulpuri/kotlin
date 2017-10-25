@@ -7,18 +7,18 @@ fun foo() {
     val a = Array<Int>(3, {0})
 
     for (p in a) {
-        bar(<!TYPE_MISMATCH!>x<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
         if (x == null) continue
-        bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
         for (q in a) {
-            bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
-            if (<!SENSELESS_COMPARISON!>x == null<!>) bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+            bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
+            if (<!NI;SENSELESS_COMPARISON!><!SENSELESS_COMPARISON!>x == null<!><!>) bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
         }
     }
 
     for (p in a) {
-        bar(<!TYPE_MISMATCH!>x<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
         if (x == null) break
-        bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+        bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
     }
 }

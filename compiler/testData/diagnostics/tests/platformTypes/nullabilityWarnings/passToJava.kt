@@ -35,8 +35,8 @@ fun test(n: J?, nn: J) {
     // platform type with no annotation
     val platformJ = J.staticJ
 
-    J.staticNN = <!TYPE_MISMATCH!>n<!>
-    J.staticNN = <!TYPE_MISMATCH!>platformN<!>
+    J.staticNN = <!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>n<!><!>
+    J.staticNN = <!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>platformN<!><!>
     J.staticNN = nn
     J.staticNN = platformNN
     J.staticNN = platformJ
@@ -55,12 +55,12 @@ fun test(n: J?, nn: J) {
 
     J.staticSet(nn, nn, nn)
     J.staticSet(platformNN, platformNN, platformNN)
-    J.staticSet(<!TYPE_MISMATCH!>n<!>, n, n)
-    J.staticSet(<!TYPE_MISMATCH!>platformN<!>, platformN, platformN)
+    J.staticSet(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>n<!><!><!>, n, n)
+    J.staticSet(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>platformN<!><!><!>, platformN, platformN)
     J.staticSet(platformJ, platformJ, platformJ)
 
-    J().nn = <!TYPE_MISMATCH!>n<!>
-    J().nn = <!TYPE_MISMATCH!>platformN<!>
+    J().nn = <!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>n<!><!>
+    J().nn = <!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>platformN<!><!>
     J().nn = nn
     J().nn = platformNN
     J().nn = platformJ
@@ -79,13 +79,13 @@ fun test(n: J?, nn: J) {
 
     J().set(nn, nn, nn)
     J().set(platformNN, platformNN, platformNN)
-    J().set(<!TYPE_MISMATCH!>n<!>, n, n)
-    J().set(<!TYPE_MISMATCH!>platformN<!>, platformN, platformN)
+    J().set(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>n<!><!><!>, n, n)
+    J().set(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>platformN<!><!><!>, platformN, platformN)
     J().set(platformJ, platformJ, platformJ)
 
     J(nn, nn, nn)
     J(platformNN, platformNN, platformNN)
-    J(<!TYPE_MISMATCH!>n<!>, n, n)
-    J(<!TYPE_MISMATCH!>platformN<!>, platformN, platformN)
+    J(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>n<!><!><!>, n, n)
+    J(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>platformN<!><!><!>, platformN, platformN)
     J(platformJ, platformJ, platformJ)
 }

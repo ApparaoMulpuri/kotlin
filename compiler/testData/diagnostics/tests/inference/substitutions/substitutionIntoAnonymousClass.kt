@@ -22,6 +22,6 @@ class Foo<R> {
 
     fun test() {
         Foo<Int>().bar<String>().baz().getR(1)
-        Foo<Int>().bar<String>().baz().getR(<!TYPE_MISMATCH!>""<!>)
+        Foo<Int>().bar<String>().baz().getR(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>""<!><!><!>)
     }
 }

@@ -6,13 +6,13 @@ fun foo() {
     val x: Int? = null
 
     do {
-        bar(<!TYPE_MISMATCH!>x<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
     } while (x == null)
-    bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
     
     val y: Int? = null
     do {
-        bar(<!TYPE_MISMATCH!>y<!>)
+        bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>y<!><!><!>)
     } while (y != null)
-    bar(<!TYPE_MISMATCH, DEBUG_INFO_CONSTANT!>y<!>)
+    bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!NI;DEBUG_INFO_CONSTANT!><!TYPE_MISMATCH!><!DEBUG_INFO_CONSTANT!>y<!><!><!><!><!>)
 }

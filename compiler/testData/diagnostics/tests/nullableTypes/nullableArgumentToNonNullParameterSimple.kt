@@ -6,8 +6,8 @@ fun foo(x: Int) {}
 fun foo(x: Int, y: String) {}
 
 fun bar(nullX: Int?, nullY: String?, notNullY: String) {
-    foo(<!TYPE_MISMATCH!>nullX<!>)
-    foo(<!TYPE_MISMATCH!>nullX<!>, notNullY)
-    foo(<!TYPE_MISMATCH!>nullX<!>, <!TYPE_MISMATCH!>nullY<!>)
-    <!NONE_APPLICABLE!>foo<!>()
+    <!NI;NONE_APPLICABLE!>foo<!>(<!TYPE_MISMATCH!>nullX<!>)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>nullX<!><!><!>, notNullY)
+    foo(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>nullX<!><!><!>, <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>nullY<!><!><!>)
+    <!NI;NONE_APPLICABLE!><!NONE_APPLICABLE!>foo<!><!>()
 }

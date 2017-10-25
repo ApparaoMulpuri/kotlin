@@ -9,7 +9,7 @@ class A {
 fun foo() {
     val x: Int? = null
 
-    A().bar(<!TYPE_MISMATCH!>x<!>)
+    A().bar(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
     if (x == null) return
-    A().bar(<!DEBUG_INFO_SMARTCAST!>x<!>)
+    A().bar(<!NI;DEBUG_INFO_SMARTCAST!><!DEBUG_INFO_SMARTCAST!>x<!><!>)
 }

@@ -20,8 +20,8 @@ fun foo() {
     checkSubtype<List<Int>>(b)
 
     //check for non-error types
-    checkSubtype<String>(<!TYPE_MISMATCH!>u<!>)
-    checkSubtype<String>(<!TYPE_MISMATCH!>b<!>)
+    checkSubtype<String>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>u<!><!><!>)
+    checkSubtype<String>(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>b<!><!><!>)
 }
 
 
@@ -31,6 +31,6 @@ fun foo() {
 @Suppress("UNCHECKED_CAST")
 fun <T> array(vararg t : T) : Array<T> = t as Array<T>
 
-infix fun <T, R> Array<T>.map(<!UNUSED_PARAMETER!>transform<!> : (T) -> R) : List<R> {<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
+infix fun <T, R> Array<T>.map(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>transform<!><!> : (T) -> R) : List<R> {<!NI;NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!><!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!><!>
 
-infix fun <T, R> Iterable<T>.map(<!UNUSED_PARAMETER!>transform<!> : (T) -> R) : List<R> {<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
+infix fun <T, R> Iterable<T>.map(<!NI;UNUSED_PARAMETER!><!UNUSED_PARAMETER!>transform<!><!> : (T) -> R) : List<R> {<!NI;NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!><!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!><!>

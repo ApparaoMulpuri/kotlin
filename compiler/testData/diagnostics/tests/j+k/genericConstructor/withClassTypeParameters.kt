@@ -12,7 +12,7 @@ fun test(x: List<Int>, y: List<String>) {
     var z: A<Double> = A("", x) // E inferred from expected type
     z = A("", y)
 
-    z = A<Double, String>("", <!TYPE_MISMATCH!>x<!>)
+    z = A<Double, String>("", <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>x<!><!><!>)
 
     z = A<Double, Any>("", x)
     z = A<Double, String>("", y)

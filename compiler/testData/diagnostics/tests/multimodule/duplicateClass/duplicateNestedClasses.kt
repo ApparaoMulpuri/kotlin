@@ -65,5 +65,5 @@ fun test(m1: M1) {
     d(m1.d)
     e(m1.e)
     f(m1.f)
-    g(<!TYPE_MISMATCH!>m1.g<!>)
+    g(<!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>m1.g<!><!><!>)
 }

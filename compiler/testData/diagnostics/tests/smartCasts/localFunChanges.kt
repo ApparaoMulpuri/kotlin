@@ -9,8 +9,8 @@ fun foo() {
             i = null
             return true
         }
-        <!SMARTCAST_IMPOSSIBLE!>i<!>.hashCode()
-        trans(<!SMARTCAST_IMPOSSIBLE!>i<!>, ::can)
-        <!SMARTCAST_IMPOSSIBLE!>i<!>.hashCode()
+        <!NI;SMARTCAST_IMPOSSIBLE!><!SMARTCAST_IMPOSSIBLE!>i<!><!>.hashCode()
+        trans(<!NI;SMARTCAST_IMPOSSIBLE!><!NI;SMARTCAST_IMPOSSIBLE!><!SMARTCAST_IMPOSSIBLE!>i<!><!><!>, ::can)
+        <!NI;SMARTCAST_IMPOSSIBLE!><!SMARTCAST_IMPOSSIBLE!>i<!><!>.hashCode()
     }
 }

@@ -3,7 +3,7 @@
 // FILE: KotlinFile.kt
 fun foo(javaClass: JavaClass<Int>): Int {
     val inner = javaClass.createInner<String>()
-    return <!TYPE_MISMATCH!>inner.doSomething(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>, "") <!TYPE_MISMATCH!>{ }<!><!>
+    return <!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>inner.doSomething(<!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!NI;CONSTANT_EXPECTED_TYPE_MISMATCH!><!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!><!><!>, "") <!NI;TYPE_MISMATCH!><!NI;TYPE_MISMATCH!><!TYPE_MISMATCH!>{ }<!><!><!><!><!>
 }
 
 // FILE: JavaClass.java
