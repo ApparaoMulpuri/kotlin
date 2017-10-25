@@ -11,6 +11,6 @@ fun <T> T.testThis(): String {
     if (this != null) {
         return this<!NI;UNNECESSARY_NOT_NULL_ASSERTION!><!UNNECESSARY_NOT_NULL_ASSERTION!>!!<!><!>.toString()
     }
-    <!NI;UNREACHABLE_CODE!>return<!> this!!.toString()
+    <!NI;UNREACHABLE_CODE!>return<!> this!!<!NI;UNREACHABLE_CODE!>.toString()<!>
 }
 

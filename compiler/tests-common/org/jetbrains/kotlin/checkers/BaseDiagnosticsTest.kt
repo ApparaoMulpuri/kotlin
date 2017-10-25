@@ -131,6 +131,7 @@ abstract class BaseDiagnosticsTest : KotlinMultiFileTestWithJava<TestModule, Tes
         private val markDynamicCalls: Boolean
         val dynamicCallDescriptors: List<DeclarationDescriptor> = ArrayList()
         val withNewInferenceDirective: Boolean
+        val newInferenceEnabled: Boolean
 
         init {
             this.declareCheckType = CHECK_TYPE_DIRECTIVE in directives
@@ -140,6 +141,7 @@ abstract class BaseDiagnosticsTest : KotlinMultiFileTestWithJava<TestModule, Tes
             this.declareFlexibleType = EXPLICIT_FLEXIBLE_TYPES_DIRECTIVE in directives
             this.markDynamicCalls = MARK_DYNAMIC_CALLS_DIRECTIVE in directives
             this.withNewInferenceDirective = "WITH_NEW_INFERENCE" in directives
+            this.newInferenceEnabled = (customLanguageVersionSettings ?: LanguageVersionSettingsImpl.DEFAULT).supportsFeature(LanguageFeature.NewInference)
             if (fileName.endsWith(".java")) {
                 // TODO: check there are no syntax errors in .java sources
                 this.createKtFile = lazyOf(null)
@@ -217,8 +219,7 @@ abstract class BaseDiagnosticsTest : KotlinMultiFileTestWithJava<TestModule, Tes
 
             val ok = booleanArrayOf(true)
 //            val withNewInferenceDirective = InTextDirectivesUtils.isDirectiveDefined(expectedText, "// !WITH_NEW_INFERENCE")
-            val withNewInference = (customLanguageVersionSettings ?: LanguageVersionSettingsImpl.DEFAULT).supportsFeature(LanguageFeature.NewInference) &&
-                                   withNewInferenceDirective
+            val withNewInference = newInferenceEnabled && withNewInferenceDirective
             val diagnostics = ContainerUtil.filter(
                     CheckerTestUtil.getDiagnosticsIncludingSyntaxErrors(
                             bindingContext, implementingModulesBindings, ktFile, markDynamicCalls, dynamicCallDescriptors, withNewInference

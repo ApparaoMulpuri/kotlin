@@ -1,3 +1,5 @@
+// !WITH_NEW_INFERENCE
+
 package localObjects
 
 object A {
@@ -14,10 +16,10 @@ fun test() {
     }
     b.foo()
 
-    <!LOCAL_OBJECT_NOT_ALLOWED!>object B<!> {
+    <!NI;LOCAL_OBJECT_NOT_ALLOWED!><!LOCAL_OBJECT_NOT_ALLOWED!>object B<!><!> {
         fun foo() {}
     }
     B.foo()
 }
 
-val bb = <!UNRESOLVED_REFERENCE!>B<!>.<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>foo<!>()
+val bb = <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>B<!><!>.<!NI;DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!><!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>foo<!><!>()

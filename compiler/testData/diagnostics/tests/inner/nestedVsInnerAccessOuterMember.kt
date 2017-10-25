@@ -1,12 +1,14 @@
+// !WITH_NEW_INFERENCE
+
 class Outer {
     fun function() = 42
     val property = ""
     
     class Nested {
-        fun f() = <!UNRESOLVED_REFERENCE!>function<!>()
-        fun g() = <!UNRESOLVED_REFERENCE!>property<!>
-        fun h() = this<!UNRESOLVED_REFERENCE!>@Outer<!>.<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>function<!>()
-        fun i() = this<!UNRESOLVED_REFERENCE!>@Outer<!>.<!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>property<!>
+        fun f() = <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>function<!><!>()
+        fun g() = <!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>property<!><!>
+        fun h() = this<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>@Outer<!><!>.<!NI;DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!><!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>function<!><!>()
+        fun i() = this<!NI;UNRESOLVED_REFERENCE!><!UNRESOLVED_REFERENCE!>@Outer<!><!>.<!NI;DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!><!DEBUG_INFO_ELEMENT_WITH_ERROR_TYPE!>property<!><!>
     }
     
     inner class Inner {

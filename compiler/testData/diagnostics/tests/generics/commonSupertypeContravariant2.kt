@@ -1,3 +1,5 @@
+// !WITH_NEW_INFERENCE
+
 interface In<in E>
 class A : In<A>
 class B : In<B>

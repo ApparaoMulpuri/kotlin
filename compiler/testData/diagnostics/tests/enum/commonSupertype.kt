@@ -1,3 +1,4 @@
+// !WITH_NEW_INFERENCE
 // KT-5943 StackOverflowError from commonSupertype of two enums
 
 enum class A { A }
