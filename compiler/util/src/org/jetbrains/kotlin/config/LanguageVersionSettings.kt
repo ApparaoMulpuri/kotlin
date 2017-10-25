@@ -80,7 +80,7 @@ enum class LanguageFeature(
 
     MultiPlatformProjects(sinceVersion = null, defaultState = State.DISABLED),
 
-    NewInference(sinceVersion = KOTLIN_1_2, defaultState = State.DISABLED),
+    NewInference(sinceVersion = KOTLIN_1_2, defaultState = if (System.getProperty("kotlin.ni") != null) State.ENABLED else State.DISABLED),
 
     ;
 
