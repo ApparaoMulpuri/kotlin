@@ -140,7 +140,7 @@ abstract class BaseDiagnosticsTest : KotlinMultiFileTestWithJava<TestModule, Tes
             this.checkLazyLog = CHECK_LAZY_LOG_DIRECTIVE in directives || CHECK_LAZY_LOG_DEFAULT
             this.declareFlexibleType = EXPLICIT_FLEXIBLE_TYPES_DIRECTIVE in directives
             this.markDynamicCalls = MARK_DYNAMIC_CALLS_DIRECTIVE in directives
-            this.withNewInferenceDirective = "WITH_NEW_INFERENCE" in directives
+            this.withNewInferenceDirective = WITH_NEW_INFERENCE_DIRECTIVE in directives
             this.newInferenceEnabled = (customLanguageVersionSettings ?: LanguageVersionSettingsImpl.DEFAULT).supportsFeature(LanguageFeature.NewInference)
             if (fileName.endsWith(".java")) {
                 // TODO: check there are no syntax errors in .java sources
@@ -326,6 +326,8 @@ abstract class BaseDiagnosticsTest : KotlinMultiFileTestWithJava<TestModule, Tes
         val CHECK_LAZY_LOG_DEFAULT = "true" == System.getProperty("check.lazy.logs", "false")
 
         val MARK_DYNAMIC_CALLS_DIRECTIVE = "MARK_DYNAMIC_CALLS"
+
+        val WITH_NEW_INFERENCE_DIRECTIVE = "WITH_NEW_INFERENCE"
 
         private fun parseDiagnosticFilterDirective(directiveMap: Map<String, String>, allowUnderscoreUsage: Boolean): Condition<Diagnostic> {
             val directives = directiveMap[DIAGNOSTICS_DIRECTIVE]
