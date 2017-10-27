@@ -38,7 +38,7 @@ import java.util.zip.ZipOutputStream
 import kotlin.reflect.KClass
 
 object MockLibraryUtil {
-    private var compilerClassLoader = SoftReference<ClassLoader>(null)
+    private var compilerClassLoader: ClassLoader? = null
 
     @JvmStatic
     @JvmOverloads
@@ -205,8 +205,8 @@ object MockLibraryUtil {
 
     @Synchronized
     private fun loadCompilerClass(compilerClass: KClass<out CLICompiler<*>>): Class<*> {
-        val classLoader = compilerClassLoader.get() ?: createCompilerClassLoader().also { classLoader ->
-            compilerClassLoader = SoftReference<ClassLoader>(classLoader)
+        val classLoader = compilerClassLoader ?: createCompilerClassLoader().also { classLoader ->
+            compilerClassLoader = classLoader
         }
         return classLoader.loadClass(compilerClass.java.name)
     }
